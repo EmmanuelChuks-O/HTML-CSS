@@ -1,0 +1,38 @@
+body{
+    margin-top: 40px;
+    text-align: center;
+    color: #000;
+    font-family: sans-serif;
+    background-image: url(./images/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.menu{
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.menu .btn{
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 22px;
+    /* float: left; */
+    color: #fff;
+    padding: 8px 12px;
+}
+
+.btn .pictures{
+    background-color: white;
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    line-height: 42;
+    border-radius: 50% ;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: black;
+}
