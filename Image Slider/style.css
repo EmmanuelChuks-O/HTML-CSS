@@ -1,0 +1,71 @@
+/* Ensure the page spans the full viewport height and remove default spacing */
+html, body {
+  height: 100%;        /* Make <html> and <body> fill the screen vertically */
+  margin: 0;           /* Remove default browser margin */
+}
+
+body {
+  display: flex;               /* Turn the body into a flex container */
+  justify-content: center;     /* Center #container horizontally */
+  align-items: center;         /* Center #container vertically */
+}
+
+/* The visible “window” for our slider */
+#container {
+  width: 800px;      /* Fixed width matching one slide’s width */
+  overflow: hidden;  /* Hide everything outside this box */
+}
+
+/* The long strip that holds all images in a row */
+#sliderbox {
+  position: relative;             /* Establishes a positioning context for ‘left’ */
+  width: 8060px;                  /* Total width: (slide width 800 + 2×border 3) × 10 slides */
+  animation-name: slideranimation;/* Reference to the keyframes below */
+  animation-duration: 100s;       /* Time it takes to go from start to end once */
+  animation-iteration-count: infinite; /* Loop the animation forever */
+}
+
+/* Each image in the strip */
+#sliderbox img {
+  float: left;     /* Line images up horizontally in the strip */
+  width: 800px;    /* Width of each slide */
+  height: 500px;   /* Height of each slide */
+  border: 3px solid; /* 3px border on all sides (included in the 806px step) */
+}
+
+/* Define the sliding motion */
+@keyframes slideranimation {
+  0% {
+    left:    0px;   /* Start fully at the first slide */
+  }
+  10% {
+    left:  -806px;  /* Shift left by one full slide (800px + 2×3px border) */
+  }
+  20% {
+    left: -1612px;  /* Two slides over (2 × 806px) */
+  }
+  30% {
+    left: -2418px;  /* Three slides over (3 × 806px) */
+  }
+  40% {
+    left: -3224px;  /* Four slides over (4 × 806px) */
+  }
+  50% {
+    left: -4030px;  /* Five slides over (5 × 806px) */
+  }
+  60% {
+    left: -4836px;  /* Six slides over (6 × 806px) */
+  }
+  70% {
+    left: -5642px;  /* Seven slides over (7 × 806px) */
+  }
+  80% {
+    left: -6448px;  /* Eight slides over (8 × 806px) */
+  }
+  90% {
+    left: -7254px;  /* Nine slides over (9 × 806px) */
+  }
+  100% {
+    left: -8060px;  /* Ten slides over (10 × 806px) – endmost position */
+  }
+}
